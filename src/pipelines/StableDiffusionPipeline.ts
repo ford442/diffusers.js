@@ -58,14 +58,14 @@ export class StableDiffusionPipeline extends PipelineBase {
       'unet/model.onnx',
       opts,
     )
-    const textEncoder = await loadModel(modelRepoOrPath, 'text_encoder/model.onnx', opts)
-    const vaeEncoder = await loadModel(modelRepoOrPath, 'vae_encoder/model.onnx', opts)
-    const vae = await loadModel(modelRepoOrPath, 'vae_decoder/model.onnx', opts)
+    const textEncoder = await loadModel("TheyCallMeHex/LCM-Dreamshaper-V7-ONNX", 'text_encoder/model.onnx', opts)
+    const vaeEncoder = await loadModel("TheyCallMeHex/LCM-Dreamshaper-V7-ONNX", 'vae_encoder/model.onnx', opts)
+    const vae = await loadModel("TheyCallMeHex/LCM-Dreamshaper-V7-ONNX", 'vae_decoder/model.onnx', opts)
 
-    const schedulerConfig = await getModelJSON(modelRepoOrPath, 'scheduler/scheduler_config.json', true, opts)
+    const schedulerConfig = await getModelJSON("TheyCallMeHex/LCM-Dreamshaper-V7-ONNX", 'scheduler/scheduler_config.json', true, opts)
     const scheduler = StableDiffusionPipeline.createScheduler(schedulerConfig)
 
-    const tokenizer = await CLIPTokenizer.from_pretrained(modelRepoOrPath, { ...opts, subdir: 'tokenizer' })
+    const tokenizer = await CLIPTokenizer.from_pretrained("TheyCallMeHex/LCM-Dreamshaper-V7-ONNX", { ...opts, subdir: 'tokenizer' })
     await dispatchProgress(opts.progressCallback, {
       status: ProgressStatus.Ready,
     })
