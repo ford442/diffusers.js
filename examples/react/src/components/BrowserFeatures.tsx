@@ -25,8 +25,6 @@ export const BrowserFeatures = () => {
     setHasGpu(true)
     })
 
-  })
-
   return (
     <Stack>
       {!hasMemory64 && <Alert severity="error">You need latest Chrome with "Experimental WebAssembly" flag enabled!</Alert>}
