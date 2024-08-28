@@ -19,7 +19,7 @@ import Button from '@mui/material/Button';
 import Divider from '@mui/material/Divider';
 import { Checkbox, FormControl, InputLabel, MenuItem, Select } from '@mui/material'
 import { FormControlLabel } from '@mui/material';
-import { BrowserFeatures, hasFp16 } from './components/BrowserFeatures'
+import { BrowserFeatures } from './components/BrowserFeatures'
 import { FAQ } from './components/FAQ'
 import { Tensor } from '@xenova/transformers'
 import cv from '@techstark/opencv-js'
@@ -44,72 +44,19 @@ interface SelectedPipeline {
 }
 
 const pipelines = [
-  {
-    name: 'LCM Dreamshaper FP16 (2.2GB)',
-    repo: 'aislamov/lcm-dreamshaper-v7-onnx',
-    revision: 'main',
-    fp16: true,
-    width: 512,
-    height: 512,
-    steps: 8,
-    hasImg2Img: false,
-    hasControlNet: false
-  },
-  // {
-  //   name: 'LCM Dreamshaper FP32 (4.2GB)',
-  //   repo: 'aislamov/lcm-dreamshaper-v7-onnx',
-  //   revision: 'fp32',
-  //   fp16: false,
-  //   width: 768,
-  //   height: 768,
-  //   steps: 8,
-  // },
-  {
-    name: 'StableDiffusion 2.1 Base FP16 (2.6GB)',
-    repo: 'aislamov/stable-diffusion-2-1-base-onnx',
-    revision: 'main',
-    fp16: true,
-    width: 512,
-    height: 512,
-    steps: 20,
-    hasImg2Img: true,
-    hasControlNet: false
-  },
-  // {
-  //   name: 'StableDiffusion 2.1 Base FP32 (5.1GB)',
-  //   repo: 'aislamov/stable-diffusion-2-1-base-onnx',
-  //   revision: 'fp32',
-  //   fp16: false,
-  //   width: 512,
-  //   height: 512,
-  //   steps: 20,
-  // },
-  {
-    name: 'StableDiffusion 1.5 Base FP16 Canny (2.9GB)',
-    repo: 'jdp8/stable-diffusion-1-5-canny-base-onnx',
-    revision: 'main',
-    fp16: true,
-    width: 512,
-    height: 512,
-    steps: 20,
-    hasImg2Img: true,
-    hasControlNet: true
-  },
-  {
-    name: 'SSD-1B LCM (4.5GB)',
-    repo: 'aislamov/ssd-1b-fp16',
-    revision: 'main',
-    fp16: true,
-    width: 1024,
-    height: 1024,
-    steps: 8,
-    hasImg2Img: false,
-    hasControlNet: false,
-  },
+    {
+     name: 'LCM Dreamshaper FP32 (4.2GB)',
+     repo: 'aislamov/lcm-dreamshaper-v7-onnx',
+     revision: 'fp32',
+     fp16: false,
+     width: 768,
+     height: 768,
+     steps: 8,
+   },
 ]
 
 function App() {
-  const [hasF16, setHasF16] = useState<boolean>(false);
+ // const [hasF16, setHasF16] = useState<boolean>(false);
   const [selectedPipeline, setSelectedPipeline] = useState<SelectedPipeline|undefined>(pipelines[0]);
   const [modelState, setModelState] = useState<'none'|'loading'|'ready'|'inferencing'>('none');
   const [prompt, setPrompt] = useState('An astronaut riding a horse');
