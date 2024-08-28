@@ -126,7 +126,7 @@ function App() {
   const [runVaeOnEachStep, setRunVaeOnEachStep] = useState(false);
   useEffect(() => {
     setModelCacheDir('models')
-  }, [])
+  })
 
   useEffect(() => {
     setInferenceSteps(selectedPipeline?.steps || 20)
