@@ -75,13 +75,7 @@ function App() {
   const [runVaeOnEachStep, setRunVaeOnEachStep] = useState(false);
   useEffect(() => {
     setModelCacheDir('models')
-    hasFp16().then(v => {
-      setHasF16(v)
-      if (v === false) {
-        setSelectedPipeline(pipelines.find(p => p.fp16 === false))
-      }
-    })
-  }, [])
+  })
 
   useEffect(() => {
     setInferenceSteps(selectedPipeline?.steps || 20)
@@ -351,7 +345,7 @@ function App() {
                         setSelectedPipeline(pipelines.find(p => e.target.value === p.name))
                         setModelState('none')
                       }}>
-                      {pipelines.map(p => <MenuItem value={p.name} disabled={!hasF16 && p.fp16}>{p.name}</MenuItem>)}
+                      {pipelines.map(p => <MenuItem value={p.name}>{p.name}</MenuItem>)}
                     </Select>
                 </FormControl>
                 <p>Press the button below to download model. It will be stored in your browser cache.</p>
