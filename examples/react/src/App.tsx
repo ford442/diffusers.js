@@ -113,11 +113,7 @@ function App() {
         pipeline.current.release()
       }
       pipeline.current = await DiffusionPipeline.fromPretrained(
-        selectedPipeline.repo,
-        {
-          revision: selectedPipeline?.revision,
-          progressCallback
-        }
+        selectedPipeline.repo
       )
       setModelState('ready')
     } catch (e) {
