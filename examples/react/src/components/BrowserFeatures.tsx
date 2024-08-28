@@ -25,7 +25,7 @@ export const BrowserFeatures = () => {
     setHasGpu(true)
     })
 
-  }, [])
+  })
 
   return (
     <Stack>
