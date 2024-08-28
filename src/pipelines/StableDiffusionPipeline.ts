@@ -54,7 +54,7 @@ export class StableDiffusionPipeline extends PipelineBase {
 
     // order matters because WASM memory cannot be decreased. so we load the biggest one first
     const unet = await loadModel(
-      modelRepoOrPath,
+      "TheyCallMeHex/LCM-Dreamshaper-V7-ONNX",
       'unet/model.onnx',
       opts,
     )
