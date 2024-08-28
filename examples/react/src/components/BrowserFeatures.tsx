@@ -30,7 +30,6 @@ export const BrowserFeatures = () => {
       {!hasMemory64 && <Alert severity="error">You need latest Chrome with "Experimental WebAssembly" flag enabled!</Alert>}
       {!hasJspi && <Alert severity="error">You need "Experimental WebAssembly JavaScript Promise Integration (JSPI)" flag enabled!</Alert>}
       {!hasSharedMemory64 && <Alert severity="error">You need Chrome Canary 119 or newer!</Alert>}
-      {!hasF16 && <Alert severity="error">You need Chrome Canary 121 or higher for FP16 support!</Alert>}
       {!hasGpu && <Alert severity="error">You need a browser with WebGPU support!</Alert>}
     </Stack>
   )
