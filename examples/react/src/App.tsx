@@ -109,7 +109,6 @@ const pipelines = [
 ]
 
 function App() {
-  const [hasF16, setHasF16] = useState<boolean>(false);
   const [selectedPipeline, setSelectedPipeline] = useState<SelectedPipeline|undefined>(pipelines[0]);
   const [modelState, setModelState] = useState<'none'|'loading'|'ready'|'inferencing'>('none');
   const [prompt, setPrompt] = useState('An astronaut riding a horse');
