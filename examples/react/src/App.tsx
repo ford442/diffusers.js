@@ -84,8 +84,9 @@ function App() {
   const drawImage = async (image: Tensor) => {
     const canvas = document.getElementById('canvas') as HTMLCanvasElement
     if (canvas) {
-      const data = await image.toImageData({ tensorLayout: 'NCWH', format: 'RGB' });
-      canvas.getContext('2d')!.putImageData(data, 0, 0);
+    //  const data = await image.toImageData({ tensorLayout: 'NCWH', format: 'RGB' });
+    //  canvas.getContext('2d')!.putImageData(data, 0, 0);
+      console.log('fix missing data function!');
     }
   }
 
