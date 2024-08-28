@@ -3,8 +3,8 @@ module.exports = {
     webpack: function (config, env) {
       // set resolve.fallback
       config.resolve.fallback = {
-        fs: false,
-        path: false,
+        fs: true,
+        path: true,
         crypto: false,
       };
       return config;
