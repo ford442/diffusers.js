@@ -19,7 +19,7 @@ import Button from '@mui/material/Button';
 import Divider from '@mui/material/Divider';
 import { Checkbox, FormControl, InputLabel, MenuItem, Select } from '@mui/material'
 import { FormControlLabel } from '@mui/material';
-import { BrowserFeatures, hasFp16 } from './components/BrowserFeatures'
+import { BrowserFeatures } from './components/BrowserFeatures'
 import { FAQ } from './components/FAQ'
 import { Tensor } from '@xenova/transformers'
 import cv from '@techstark/opencv-js'
