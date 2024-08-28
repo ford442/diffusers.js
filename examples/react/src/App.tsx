@@ -55,15 +55,15 @@ const pipelines = [
     hasImg2Img: false,
     hasControlNet: false
   },
-  // {
-  //   name: 'LCM Dreamshaper FP32 (4.2GB)',
-  //   repo: 'aislamov/lcm-dreamshaper-v7-onnx',
-  //   revision: 'fp32',
-  //   fp16: false,
-  //   width: 768,
-  //   height: 768,
-  //   steps: 8,
-  // },
+   {
+     name: 'LCM Dreamshaper FP32 (4.2GB)',
+     repo: 'aislamov/lcm-dreamshaper-v7-onnx',
+     revision: 'fp32',
+     fp16: false,
+     width: 768,
+     height: 768,
+     steps: 8,
+   },
   {
     name: 'StableDiffusion 2.1 Base FP16 (2.6GB)',
     repo: 'aislamov/stable-diffusion-2-1-base-onnx',
@@ -75,15 +75,15 @@ const pipelines = [
     hasImg2Img: true,
     hasControlNet: false
   },
-  // {
-  //   name: 'StableDiffusion 2.1 Base FP32 (5.1GB)',
-  //   repo: 'aislamov/stable-diffusion-2-1-base-onnx',
-  //   revision: 'fp32',
-  //   fp16: false,
-  //   width: 512,
-  //   height: 512,
-  //   steps: 20,
-  // },
+   {
+     name: 'StableDiffusion 2.1 Base FP32 (5.1GB)',
+     repo: 'aislamov/stable-diffusion-2-1-base-onnx',
+     revision: 'fp32',
+     fp16: false,
+     width: 512,
+     height: 512,
+     steps: 20,
+   },
   {
     name: 'StableDiffusion 1.5 Base FP16 Canny (2.9GB)',
     repo: 'jdp8/stable-diffusion-1-5-canny-base-onnx',
@@ -126,12 +126,6 @@ function App() {
   const [runVaeOnEachStep, setRunVaeOnEachStep] = useState(false);
   useEffect(() => {
     setModelCacheDir('models')
-    hasFp16().then(v => {
-      setHasF16(v)
-      if (v === false) {
-        setSelectedPipeline(pipelines.find(p => p.fp16 === false))
-      }
-    })
   }, [])
 
   useEffect(() => {
@@ -141,8 +135,8 @@ function App() {
   const drawImage = async (image: Tensor) => {
     const canvas = document.getElementById('canvas') as HTMLCanvasElement
     if (canvas) {
-      const data = await image.toImageData({ tensorLayout: 'NCWH', format: 'RGB' });
-      canvas.getContext('2d')!.putImageData(data, 0, 0);
+   //   const data = await image.toImageData({ tensorLayout: 'NCWH', format: 'RGB' });
+   //   canvas.getContext('2d')!.putImageData(data, 0, 0);
     }
   }
 
