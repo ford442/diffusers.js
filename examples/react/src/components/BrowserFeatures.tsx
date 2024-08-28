@@ -3,21 +3,10 @@ import { memory64, jspi } from 'wasm-feature-detect'
 import Stack from '@mui/material/Stack'
 import Alert from '@mui/material/Alert'
 
-export async function hasFp16 () {
-  try {
-    // @ts-ignore
-    const adapter = await navigator.gpu.requestAdapter()
-    return adapter.features.has('shader-f16')
-  } catch (e) {
-    return false
-  }
-}
-
 export const BrowserFeatures = () => {
   const [hasMemory64, setHasMemory64] = useState(false);
   const [hasSharedMemory64, setHasSharedMemory64] = useState(false);
   const [hasJspi, setHasJspi] = useState(false);
-  const [hasF16, setHasF16] = useState(false);
   const [hasGpu, setHasGpu] = useState(false);
 
   useEffect(() => {
@@ -33,10 +22,7 @@ export const BrowserFeatures = () => {
     } catch (e) {
       //
     }
-
-    hasFp16().then(v => {
-      setHasF16(v)
-      setHasGpu(true)
+    setHasGpu(true)
     })
 
   }, [])
