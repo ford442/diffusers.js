@@ -5,6 +5,7 @@
   "homepage": ".",
   "dependencies": {
     "@aislamov/diffusers.js": "file:../..",
+    "@tensorflow/tfjs": "latest",
     "@tensorflow/tfjs-core": "latest",
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
