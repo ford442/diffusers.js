@@ -83,7 +83,7 @@ function App() {
     setInferenceSteps(selectedPipeline?.steps || 20)
   }, [selectedPipeline])
 
-  const drawImage = async (image: Tensor) => {
+  const drawImage = async (image: tf.Tensor3D) => {
     const canvas = document.getElementById('canvas') as HTMLCanvasElement
     if (canvas) {
     //  const data = await image.toImageData({ tensorLayout: 'NCWH', format: 'RGB' });
