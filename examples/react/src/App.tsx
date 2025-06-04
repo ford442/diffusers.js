@@ -24,6 +24,7 @@ import { FAQ } from './components/FAQ'
 import { Tensor } from '@xenova/transformers'
 import cv from '@techstark/opencv-js'
 import { StableDiffusionControlNetPipeline } from '../../../dist/pipelines/StableDiffusionControlNetPipeline';
+import * as tf from '@tensorflow/tfjs';
 
 const darkTheme = createTheme({
   palette: {
