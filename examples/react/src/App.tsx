@@ -87,7 +87,7 @@ function App() {
     if (canvas) {
     //  const data = await image.toImageData({ tensorLayout: 'NCWH', format: 'RGB' });
     //  canvas.getContext('2d')!.putImageData(data, 0, 0);
-      console.log('fix missing data function!');
+  await tf.browser.toPixels(image, canvas); 
     }
   }
 
