@@ -88,7 +88,9 @@ function App() {
     if (canvas) {
     //  const data = await image.toImageData({ tensorLayout: 'NCWH', format: 'RGB' });
     //  canvas.getContext('2d')!.putImageData(data, 0, 0);
-  await tf.browser.toPixels(image, canvas); 
+        const reshapedTensor = imageTensor.reshape([height, width, numChannels]) as tf.Tensor3D; // Replace height, width, numChannels with the actual dimensions
+
+  await tf.browser.toPixels(reshapedTensor, canvas); 
     }
   }
 
